@@ -1,0 +1,1142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070a1b" />
+    <meta
+      name="description"
+      content="A simple school project about standing together against racism. Created by Ramzy."
+    />
+    <title>Stand Together Against Racism | Created by Ramzy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ink: #070a1b;
+        --navy: #12183a;
+        --blue: #8b5cf6;
+        --sky: #ece7ff;
+        --sun: #38bdf8;
+        --coral: #fb7185;
+        --mint: #34d399;
+        --violet: #a855f7;
+        --cream: #f4f1ff;
+        --white: #e9edff;
+        --muted: #625e7e;
+        --line: #d7cef1;
+        --shadow: 0 18px 50px rgba(38, 23, 92, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--cream);
+        font-family: "DM Sans", Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid var(--sun);
+        outline-offset: 4px;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 710px;
+        overflow: hidden;
+        color: var(--white);
+        background: var(--ink);
+        isolation: isolate;
+      }
+
+      .hero::before {
+        position: absolute;
+        z-index: -2;
+        inset: 0;
+        content: "";
+        background-image: url("https://images.unsplash.com/photo-1776013700766-64ed864bf36a?auto=format&amp;fit=crop&amp;w=2200&amp;q=88");
+        background-position: center;
+        background-size: cover;
+        filter: saturate(0.9) contrast(1.04);
+        transform: scale(1.02);
+      }
+
+      .hero::after {
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        content: "";
+        background:
+          radial-gradient(circle at 84% 20%, rgba(168, 85, 247, 0.42), transparent 34%),
+          radial-gradient(circle at 74% 78%, rgba(52, 211, 153, 0.18), transparent 28%),
+          linear-gradient(90deg, rgba(7, 10, 27, 0.95) 0%, rgba(7, 10, 27, 0.82) 47%, rgba(7, 10, 27, 0.34) 100%),
+          linear-gradient(0deg, rgba(7, 10, 27, 0.64), transparent 47%);
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 27px 0;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        color: var(--white);
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: 0.11em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 33px;
+        height: 33px;
+        place-items: center;
+        color: var(--ink);
+        background: linear-gradient(135deg, var(--sun), var(--mint));
+        border: 2px solid rgba(255, 255, 255, 0.55);
+        border-radius: 50%;
+        box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+        font-family: Georgia, serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .creator {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin: 0;
+        padding: 0.75rem 1.08rem;
+        border: 1px solid rgba(56, 189, 248, 0.72);
+        border-radius: 999px;
+        background: rgba(18, 24, 58, 0.82);
+        box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.16), 0 0 28px rgba(56, 189, 248, 0.32);
+        color: var(--white);
+        backdrop-filter: blur(10px);
+        font-size: 0.86rem;
+        font-weight: 800;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        animation: creator-glow 2.8s ease-in-out infinite alternate;
+      }
+
+      .creator::before {
+        color: var(--mint);
+        content: "✦";
+        font-size: 1.05rem;
+        line-height: 1;
+        text-shadow: 0 0 12px rgba(52, 211, 153, 0.95);
+      }
+
+      .creator strong {
+        color: var(--mint);
+        font-size: 0.98rem;
+        letter-spacing: 0.13em;
+      }
+
+      .hero-content {
+        display: grid;
+        max-width: 770px;
+        min-height: 605px;
+        align-content: center;
+        padding: 88px 0 132px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 18px;
+        color: #bfeaff;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 28px;
+        height: 2px;
+        content: "";
+        background: linear-gradient(90deg, var(--sun), var(--mint));
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1,
+      h2 {
+        font-family: "Playfair Display", Georgia, serif;
+      }
+
+      h1 {
+        max-width: 720px;
+        margin-bottom: 24px;
+        font-size: clamp(3.4rem, 8vw, 6.75rem);
+        font-weight: 600;
+        letter-spacing: -0.065em;
+        line-height: 0.92;
+      }
+
+      h1 em {
+        background: linear-gradient(100deg, var(--sun), #c084fc 50%, var(--coral));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 600;
+        text-shadow: 0 0 32px rgba(168, 85, 247, 0.18);
+      }
+
+      .hero-text {
+        max-width: 560px;
+        margin-bottom: 31px;
+        color: rgba(255, 255, 255, 0.91);
+        font-size: clamp(1.05rem, 2vw, 1.24rem);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0 25px;
+        border: 2px solid transparent;
+        border-radius: 999px;
+        background: linear-gradient(110deg, var(--sun), var(--violet), var(--coral));
+        background-size: 180% 180%;
+        color: var(--white);
+        box-shadow: 0 10px 28px rgba(88, 59, 199, 0.46);
+        font-size: 0.98rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 180ms ease, background 180ms ease;
+      }
+
+      .button:hover {
+        background-position: 100% 50%;
+        filter: brightness(1.09);
+        transform: translateY(-2px);
+      }
+
+      .hero-sticker {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        width: fit-content;
+        margin: 26px 0 0;
+        padding: 0.65rem 0.92rem;
+        border: 1px solid rgba(233, 237, 255, 0.44);
+        border-radius: 12px;
+        background: rgba(18, 24, 58, 0.68);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+        color: #dbeafe;
+        font-size: 0.77rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        transform: rotate(-2deg);
+      }
+
+      .hero-sticker span {
+        color: var(--mint);
+        font-size: 1rem;
+      }
+
+      .hero-note {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 23px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.22);
+        background: rgba(4, 19, 34, 0.28);
+        backdrop-filter: blur(8px);
+      }
+
+      .hero-note .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .hero-note p {
+        margin: 0;
+        font-size: 0.95rem;
+      }
+
+      .hero-note strong {
+        color: var(--mint);
+      }
+
+      .scroll-link {
+        color: var(--white);
+        font-size: 0.88rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .intro {
+        padding: 112px 0 92px;
+      }
+
+      .intro-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.94fr) minmax(320px, 0.8fr);
+        align-items: center;
+        gap: clamp(44px, 8vw, 116px);
+      }
+
+      .section-label {
+        display: block;
+        margin-bottom: 15px;
+        color: var(--violet);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        margin-bottom: 18px;
+        color: #251a55;
+        font-size: clamp(2.3rem, 4.4vw, 4rem);
+        font-weight: 600;
+        letter-spacing: -0.055em;
+        line-height: 1.03;
+      }
+
+      .lead {
+        max-width: 610px;
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 1.13rem;
+      }
+
+      .image-stack {
+        position: relative;
+        min-height: 415px;
+      }
+
+      .image-stack img {
+        display: block;
+        width: 82%;
+        height: 385px;
+        margin-left: auto;
+        border: 2px solid rgba(56, 189, 248, 0.62);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+        object-fit: cover;
+      }
+
+      .image-sticker {
+        position: absolute;
+        bottom: 6px;
+        left: 0;
+        width: 52%;
+        padding: 20px;
+        border: 7px solid var(--cream);
+        border-radius: 18px;
+        background: linear-gradient(135deg, var(--violet), var(--coral));
+        box-shadow: var(--shadow);
+        color: var(--white);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(1.2rem, 2vw, 1.55rem);
+        font-style: italic;
+        line-height: 1.18;
+      }
+
+      .examples {
+        padding: 84px 0 100px;
+        background:
+          radial-gradient(circle at 11% 16%, rgba(56, 189, 248, 0.28), transparent 26%),
+          radial-gradient(circle at 89% 76%, rgba(251, 113, 133, 0.22), transparent 28%),
+          linear-gradient(135deg, #e9e2ff, #dff8f2);
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 38px;
+      }
+
+      .section-heading h2 {
+        max-width: 670px;
+        margin-bottom: 0;
+      }
+
+      .heading-note {
+        max-width: 300px;
+        margin-bottom: 5px;
+        color: var(--muted);
+      }
+
+      .example-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .example {
+        min-height: 224px;
+        padding: 29px 27px;
+        border: 1px solid rgba(139, 92, 246, 0.24);
+        border-radius: 18px;
+        background: rgba(249, 247, 255, 0.9);
+        box-shadow: 0 10px 24px rgba(74, 47, 151, 0.08);
+      }
+
+      .example-number {
+        display: grid;
+        width: 36px;
+        height: 36px;
+        margin-bottom: 21px;
+        place-items: center;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--violet), #6d5dfc);
+        color: var(--white);
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .example h3,
+      .action-card h3 {
+        margin-bottom: 8px;
+        color: #251a55;
+        font-size: 1.2rem;
+        line-height: 1.2;
+      }
+
+      .example p,
+      .action-card p {
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .actions {
+        padding: 108px 0 92px;
+      }
+
+      .actions-top {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(270px, 0.63fr);
+        gap: 55px;
+        margin-bottom: 42px;
+      }
+
+      .actions-top h2 {
+        margin-bottom: 0;
+      }
+
+      .actions-top p {
+        align-self: end;
+        margin-bottom: 5px;
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .action-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 17px;
+      }
+
+      .action-card {
+        position: relative;
+        min-height: 286px;
+        padding: 27px 22px 24px;
+        overflow: hidden;
+        border: 1px solid rgba(139, 92, 246, 0.17);
+        border-radius: 20px;
+        background: linear-gradient(145deg, #faf7ff 0%, #edfaff 100%);
+        box-shadow: 0 12px 32px rgba(49, 31, 111, 0.12);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .action-card:hover {
+        box-shadow: 0 20px 38px rgba(88, 59, 199, 0.22);
+        transform: translateY(-7px) rotate(-0.35deg);
+      }
+
+      .action-card::after {
+        position: absolute;
+        right: -48px;
+        bottom: -52px;
+        width: 116px;
+        height: 116px;
+        border-radius: 50%;
+        background: rgba(56, 189, 248, 0.22);
+        content: "";
+      }
+
+      .action-card:nth-child(2)::after {
+        background: rgba(168, 85, 247, 0.2);
+      }
+
+      .action-card:nth-child(3)::after {
+        background: rgba(52, 211, 153, 0.2);
+      }
+
+      .action-card:nth-child(4)::after {
+        background: rgba(251, 113, 133, 0.2);
+      }
+
+      .icon-wrap {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 25px;
+        place-items: center;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--violet), #5b5ce2);
+        box-shadow: 0 9px 20px rgba(88, 59, 199, 0.24);
+        color: var(--white);
+      }
+
+      .icon-wrap svg {
+        width: 26px;
+        height: 26px;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.9;
+      }
+
+      .action-card h3,
+      .action-card p {
+        position: relative;
+        z-index: 1;
+      }
+
+      .quote-section {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #0e0929, #2b1a5a 65%, #13234e);
+        color: var(--white);
+      }
+
+      .quote-grid {
+        display: grid;
+        grid-template-columns: 0.87fr 1.13fr;
+        min-height: 510px;
+      }
+
+      .quote-image {
+        min-height: 320px;
+        border-right: 2px solid rgba(56, 189, 248, 0.6);
+        background-image: url("https://images.unsplash.com/photo-1636987050384-9b079c700f63?auto=format&amp;fit=crop&amp;w=1600&amp;q=86");
+        background-position: center;
+        background-size: cover;
+      }
+
+      .quote-copy {
+        display: grid;
+        align-content: center;
+        padding: clamp(50px, 8vw, 108px);
+      }
+
+      .quote-mark {
+        margin: 0 0 9px;
+        color: var(--mint);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 5.5rem;
+        line-height: 0.7;
+      }
+
+      blockquote {
+        max-width: 650px;
+        margin: 0;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(2rem, 4.3vw, 3.7rem);
+        font-weight: 600;
+        letter-spacing: -0.045em;
+        line-height: 1.08;
+      }
+
+      .quote-copy cite {
+        display: block;
+        margin-top: 27px;
+        color: #bfeaff;
+        font-size: 0.93rem;
+        font-style: normal;
+      }
+
+      .pledge {
+        padding: 100px 0;
+        background:
+          radial-gradient(circle at 16% 25%, rgba(168, 85, 247, 0.14), transparent 26%),
+          radial-gradient(circle at 82% 70%, rgba(52, 211, 153, 0.16), transparent 24%);
+        text-align: center;
+      }
+
+      .pledge h2 {
+        max-width: 660px;
+        margin: 0 auto 18px;
+      }
+
+      .pledge > .container > p {
+        max-width: 630px;
+        margin: 0 auto 31px;
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .promise-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .promise-list li {
+        padding: 10px 16px;
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        border-radius: 999px;
+        background: #f8f5ff;
+        color: #31205e;
+        font-size: 0.93rem;
+        font-weight: 700;
+      }
+
+      .ramzy-signature {
+        margin: 32px auto 0 !important;
+        color: #33205e !important;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(1.25rem, 2.3vw, 1.65rem) !important;
+        font-style: italic;
+      }
+
+      .ramzy-signature span {
+        background: linear-gradient(100deg, var(--violet), var(--coral));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 700;
+      }
+
+      footer {
+        padding: 48px 0 30px;
+        border-top: 1px solid rgba(56, 189, 248, 0.45);
+        background: #08091c;
+        color: #c5cbe7;
+      }
+
+      .footer-main {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 34px;
+        padding-bottom: 34px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .footer-title {
+        margin-bottom: 7px;
+        color: var(--white);
+        font-size: 1.08rem;
+        font-weight: 700;
+      }
+
+      .footer-main p {
+        max-width: 520px;
+        margin-bottom: 0;
+        font-size: 0.93rem;
+      }
+
+      .credits {
+        max-width: 470px;
+        margin: 0;
+        font-size: 0.78rem;
+        line-height: 1.7;
+      }
+
+      .credits a {
+        color: #8ee9ff;
+      }
+
+      .footer-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding-top: 25px;
+        font-size: 0.86rem;
+      }
+
+      .footer-bottom p {
+        margin: 0;
+      }
+
+      @keyframes creator-glow {
+        from {
+          box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.15), 0 0 23px rgba(56, 189, 248, 0.26);
+        }
+
+        to {
+          box-shadow: 0 0 0 5px rgba(52, 211, 153, 0.16), 0 0 35px rgba(168, 85, 247, 0.46);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          min-height: 650px;
+        }
+
+        .intro-grid,
+        .quote-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .image-stack {
+          width: 100%;
+          max-width: 560px;
+          margin: 0 auto;
+        }
+
+        .example-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .example {
+          min-height: 0;
+        }
+
+        .action-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .quote-image {
+          min-height: 330px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .container {
+          width: min(100% - 32px, 1120px);
+        }
+
+        .topbar {
+          padding-top: 19px;
+        }
+
+        .brand {
+          font-size: 0.76rem;
+        }
+
+        .creator {
+          padding: 8px 10px;
+          font-size: 0.68rem;
+          letter-spacing: 0.06em;
+        }
+
+        .hero-content {
+          min-height: 550px;
+          padding: 72px 0 115px;
+        }
+
+        h1 {
+          font-size: clamp(3rem, 16vw, 4.8rem);
+        }
+
+        .hero-note .container,
+        .section-heading,
+        .actions-top,
+        .footer-main,
+        .footer-bottom {
+          display: block;
+        }
+
+        .scroll-link,
+        .heading-note,
+        .actions-top p,
+        .credits,
+        .footer-bottom p + p {
+          display: block;
+          margin-top: 14px;
+        }
+
+        .intro,
+        .actions,
+        .pledge {
+          padding: 75px 0;
+        }
+
+        .examples {
+          padding: 68px 0;
+        }
+
+        .image-stack {
+          min-height: 355px;
+        }
+
+        .image-stack img {
+          width: 88%;
+          height: 330px;
+        }
+
+        .image-sticker {
+          width: 58%;
+          padding: 16px;
+          border-width: 5px;
+        }
+
+        .action-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .action-card {
+          min-height: 0;
+        }
+
+        .quote-copy {
+          padding: 60px 24px;
+        }
+
+        footer {
+          padding-top: 42px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .button {
+          transition: none;
+        }
+
+        .creator {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="hero">
+      <div class="container topbar">
+        <a class="brand" href="#top" aria-label="Stand Together home">
+          <span class="brand-mark">S</span>
+          <span>Stand Together</span>
+        </a>
+
+        <p class="creator">Created by <strong>Ramzy</strong></p>
+      </div>
+
+      <div class="container hero-content" id="top">
+        <p class="eyebrow">A school English project</p>
+
+        <h1>Stand <em>together</em> against racism.</h1>
+
+        <p class="hero-text">
+          Every person deserves respect, safety and equal chances —
+          whatever their skin colour, culture or origin.
+        </p>
+
+        <div>
+          <a class="button" href="#actions">Take a stand</a>
+        </div>
+
+        <p class="hero-sticker">
+          <span aria-hidden="true">✦</span>
+          Kindness is cool
+        </p>
+      </div>
+
+      <div class="hero-note">
+        <div class="container">
+          <p>
+            <strong>Respect</strong> starts with the way we speak, listen and include others.
+          </p>
+
+          <a class="scroll-link" href="#understand">Discover more</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" id="understand">
+        <div class="container intro-grid">
+          <div>
+            <span class="section-label">Understand</span>
+            <h2>What is racism?</h2>
+
+            <p class="lead">
+              Racism is judging, excluding or treating someone badly because of
+              their skin colour, ethnic background, culture or religion.
+              It hurts people and divides communities.
+            </p>
+          </div>
+
+          <div class="image-stack">
+            <img
+              src="https://images.unsplash.com/photo-1758272133904-413d8755e728?auto=format&amp;fit=crop&amp;w=1200&amp;q=86"
+              alt="A diverse group of friends smiling together outdoors"
+            />
+
+            <div class="image-sticker">
+              Our differences make us interesting.
+              Our respect makes us stronger.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="examples" aria-labelledby="examples-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="section-label">Notice it</span>
+              <h2 id="examples-title">Racism can happen in simple moments.</h2>
+            </div>
+
+            <p class="heading-note">
+              It can happen at school, online or in daily life.
+              Knowing the signs helps us choose a better response.
+            </p>
+          </div>
+
+          <div class="example-grid">
+            <article class="example">
+              <div class="example-number">01</div>
+              <h3>Hurtful jokes</h3>
+              <p>
+                Making fun of someone’s name, accent, religion or origin
+                is not harmless. It can make a person feel unsafe.
+              </p>
+            </article>
+
+            <article class="example">
+              <div class="example-number">02</div>
+              <h3>Leaving people out</h3>
+              <p>
+                Ignoring someone or refusing to include them because
+                they look or speak differently is unfair.
+              </p>
+            </article>
+
+            <article class="example">
+              <div class="example-number">03</div>
+              <h3>Hate online</h3>
+              <p>
+                Racist messages, comments or videos online should not
+                be shared. Report them and ask for help.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="actions" id="actions">
+        <div class="container">
+          <div class="actions-top">
+            <div>
+              <span class="section-label">Act with courage</span>
+              <h2>Four simple actions can make a real difference.</h2>
+            </div>
+
+            <p>
+              We do not need to be perfect. We can start with small choices
+              that make people feel seen, safe and respected.
+            </p>
+          </div>
+
+          <div class="action-grid">
+            <article class="action-card">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v14H6.5A2.5 2.5 0 0 0 4 19.5zm0 0V21h16"/>
+                  <path d="M8 7h8M8 11h6"/>
+                </svg>
+              </div>
+
+              <h3>Learn and listen</h3>
+              <p>
+                Discover other cultures and listen to people’s experiences
+                with an open mind.
+              </p>
+            </article>
+
+            <article class="action-card">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M5 4h14v11H9l-4 4z"/>
+                  <path d="M8 8h8M8 11h5"/>
+                </svg>
+              </div>
+
+              <h3>Speak up</h3>
+              <p>
+                Do not laugh at racist jokes or stay silent when someone
+                is treated unfairly. Say, “That is not okay.”
+              </p>
+            </article>
+
+            <article class="action-card">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="8" cy="8" r="3"/>
+                  <circle cx="17" cy="9" r="2.5"/>
+                  <path d="M2.5 20a5.5 5.5 0 0 1 11 0M13.5 20a4.2 4.2 0 0 1 8 0"/>
+                </svg>
+              </div>
+
+              <h3>Include everyone</h3>
+              <p>
+                Be kind, make new friends and make sure nobody feels left out
+                at school, online or in your community.
+              </p>
+            </article>
+
+            <article class="action-card">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 21s7-3.8 7-10V5.3L12 3 5 5.3V11c0 6.2 7 10 7 10z"/>
+                  <path d="m9 12 2 2 4-4"/>
+                </svg>
+              </div>
+
+              <h3>Report and support</h3>
+              <p>
+                Tell a trusted adult, teacher or school leader about racism.
+                Support the person who has been hurt.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="quote-section" aria-label="Message of unity">
+        <div class="quote-grid">
+          <div
+            class="quote-image"
+            role="img"
+            aria-label="A group of people putting their hands together"
+          ></div>
+
+          <div class="quote-copy">
+            <p class="quote-mark" aria-hidden="true">“</p>
+
+            <blockquote>
+              Change starts with small choices. Choose respect, courage and kindness every day.
+            </blockquote>
+
+            <cite>— A promise we can all make</cite>
+          </div>
+        </div>
+      </section>
+
+      <section class="pledge" id="pledge">
+        <div class="container">
+          <span class="section-label">A shared promise</span>
+
+          <h2>
+            Our differences are not a problem.
+            They are part of what makes our world beautiful.
+          </h2>
+
+          <p>
+            When we choose respect in our words and actions, we help build
+            a fairer school and a fairer future.
+          </p>
+
+          <ul class="promise-list" aria-label="Values of the project">
+            <li>Respect every person</li>
+            <li>Reject racist language</li>
+            <li>Include others</li>
+            <li>Ask for help when needed</li>
+          </ul>
+
+          <p class="ramzy-signature">
+            <span>I choose respect</span> — Ramzy
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-main">
+          <div>
+            <p class="footer-title">Stand Together Against Racism</p>
+            <p>
+              A simple message for a stronger community:
+              respect every person, every day.
+            </p>
+          </div>
+
+          <p class="credits">
+            Photo credits:
+            <a
+              href="https://unsplash.com/photos/people-protest-with-a-no-racism-sign-GfP2LvlisK0"
+              target="_blank"
+              rel="noreferrer"
+            >Hasan Mrad</a>,
+            <a
+              href="https://unsplash.com/photos/a-diverse-group-of-friends-taking-a-selfie-outdoors-2SqN6-Fraqw"
+              target="_blank"
+              rel="noreferrer"
+            >Vitaly Gariev</a>
+            and
+            <a
+              href="https://unsplash.com/photos/a-group-of-people-putting-their-hands-together-g1-Kch8GznA"
+              target="_blank"
+              rel="noreferrer"
+            >Sierra Koder</a>
+            on Unsplash.
+          </p>
+        </div>
+
+        <div class="footer-bottom">
+          <p>Created by Ramzy — School English Project</p>
+          <p>Respect • Equality • Unity</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
